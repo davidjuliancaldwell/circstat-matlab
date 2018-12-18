@@ -96,9 +96,14 @@ switch format
     % plot in  'hist style'
     % this is essentially a wrapper for the rose plot function of matlab
     % adds optionally the mean resultant vector
-    
+            figure
+        t = 0 : .01 : 2 * pi;
+P = polar(t, 0.25 * ones(size(t)));
+hold on
+set(P, 'Visible', 'off')
+
     if nargin < 3|| isempty(formats) 
-      formats = '-';
+      formats = '-b';
     end
     
     if nargin > 3 && ~isempty(varargin{1})
